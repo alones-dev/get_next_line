@@ -6,7 +6,7 @@
 /*   By: kdaumont <kdaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:46:54 by kdaumont          #+#    #+#             */
-/*   Updated: 2023/11/21 11:05:39 by kdaumont         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:57:55 by kdaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+char	*ft_strjoin(char const *s1, char const *s2);
 char	*get_next_line(int fd);
 
 #endif
