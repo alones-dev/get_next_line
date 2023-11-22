@@ -6,7 +6,7 @@
 /*   By: kdaumont <kdaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:46:50 by kdaumont          #+#    #+#             */
-/*   Updated: 2023/11/22 14:31:50 by kdaumont         ###   ########.fr       */
+/*   Updated: 2023/11/22 15:22:42 by kdaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,7 @@ char	*check_newline(int fd)
 	while ((!is_new_line(new)) && readed > 0)
 	{
 		readed = read(fd, buffer, BUFFER_SIZE);
-		// printf("buffer: %s\n", buffer);
 		new = ft_strjoin(new, buffer);
-		// printf("new: %s\n\n\n", new);
 		if (!new)
 		{
 			free(new);
@@ -53,7 +51,7 @@ char	*check_newline(int fd)
 
 char	add_to_line(char *new)
 {
-	char	*line;
+		
 }
 
 char	*get_next_line(int fd)
