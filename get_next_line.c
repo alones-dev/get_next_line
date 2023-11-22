@@ -6,7 +6,7 @@
 /*   By: kdaumont <kdaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:46:50 by kdaumont          #+#    #+#             */
-/*   Updated: 2023/11/22 15:22:42 by kdaumont         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:32:07 by kdaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,30 @@ int	is_new_line(char *new)
 	return (0);
 }
 
+char	*add_to_line(char *new)
+{
+	char	*line;
+	int		len;
+
+	len = ft_strlen(ft_strrchr(new, '\n'));
+	line = ft_strndup(new, ft_strlen(new) - len);
+	if (!line)
+		return (NULL);
+	return (line);
+}
+
 char	*check_newline(int fd)
 {
 	char		*new;
+	char		*line;
 	static char	buffer[BUFFER_SIZE];
 	int			readed;
 
 	readed = 1;
+	line = NULL;
 	new = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!new)
-		return (0);
+		return (NULL);
 	while ((!is_new_line(new)) && readed > 0)
 	{
 		readed = read(fd, buffer, BUFFER_SIZE);
@@ -43,15 +57,11 @@ char	*check_newline(int fd)
 		if (!new)
 		{
 			free(new);
-			return (0);
+			return (NULL);
 		}
 	}
-	return (new);
-}
-
-char	add_to_line(char *new)
-{
-		
+	line = add_to_line(new);
+	return (line);
 }
 
 char	*get_next_line(int fd)
@@ -61,8 +71,8 @@ char	*get_next_line(int fd)
 void	main(void)
 {
 	int fd = open("test.txt", O_RDWR);
-	printf("1: %s\n\n", check_newline(fd));
-	printf("2: %s\n", check_newline(fd));
+	printf("1: %s", check_newline(fd));
+	printf("2: %s", check_newline(fd));
 	// check_newline(fd);
 	close(fd);
 }

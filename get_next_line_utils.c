@@ -6,7 +6,7 @@
 /*   By: kdaumont <kdaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:46:45 by kdaumont          #+#    #+#             */
-/*   Updated: 2023/11/22 14:40:11 by kdaumont         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:26:03 by kdaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,20 @@ char	*ft_strrchr(const char *s, int c)
 	return (0);
 }
 
-void	main(void)
+char	*ft_strndup(const char *str, size_t str_len)
 {
-	printf("%d\n", ft_strlen(ft_strrchr("testt\nest", '\n')) - 1);
+	size_t i;
+	char *ptr;
+
+	ptr = malloc((str_len + 1) * sizeof(char));
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (i < str_len)
+	{
+		ptr[i] = str[i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }
