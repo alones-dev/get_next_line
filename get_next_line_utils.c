@@ -6,7 +6,7 @@
 /*   By: kdaumont <kdaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:46:45 by kdaumont          #+#    #+#             */
-/*   Updated: 2023/11/22 16:26:03 by kdaumont         ###   ########.fr       */
+/*   Updated: 2023/11/23 09:33:40 by kdaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,50 +17,58 @@ int	ft_strlen(const char *s)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 		i++;
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2, size_t new_line)
 {
 	char	*new;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
-	new = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (new_line)
+		k = new_line;
+	else
+		k = ft_strlen(s2);
+	new = malloc(sizeof(char) * (ft_strlen(s1) + k) + 1);
 	if (!new)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[i])
+		return (free(s1), NULL);
+	i = -1;
+	j = -1;
+	if (s1)
 	{
-		new[i] = s1[i];
+		while (s1[++i])
+			new[i] = s1[i];
+	}
+	else
 		i++;
-	}
-	while (s2[j])
-	{
+	while (++j < k)
 		new[i + j] = s2[j];
-		j++;
-	}
 	new[i + j] = '\0';
-	return (new);
+	return (free(s1), new);
 }
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strrchr(const char *s, int c)
 {
 	int		i;
 	char	srch;
 
+	if (!s)
+		return (0);
 	i = ft_strlen(s);
 	srch = (char)c;
 	while (i >= 0)
 	{
 		if (s[i] == srch)
-			return ((char *)s + i);
+			return (i + 1);
 		i--;
 	}
-	return (0);
+	return (i);
 }
 
 char	*ft_strndup(const char *str, size_t str_len)
@@ -68,6 +76,8 @@ char	*ft_strndup(const char *str, size_t str_len)
 	size_t i;
 	char *ptr;
 
+	if (!str)
+		return (NULL);
 	ptr = malloc((str_len + 1) * sizeof(char));
 	if (!ptr)
 		return (NULL);
