@@ -6,7 +6,7 @@
 /*   By: kdaumont <kdaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:46:45 by kdaumont          #+#    #+#             */
-/*   Updated: 2023/11/23 10:34:09 by kdaumont         ###   ########.fr       */
+/*   Updated: 2023/11/23 13:37:23 by kdaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,27 +31,22 @@ char	*ft_strjoin(char *s1, char *s2, size_t new_line)
 	size_t	j;
 	size_t	k;
 
-	// printf("test %d %ld\n", BUFFER_SIZE, new_line);
 	if (new_line)
 		k = new_line;
 	else
 		k = ft_strlen(s2);
-	// printf("\nk= %ld\n", k);
 	new = malloc(sizeof(char) * (ft_strlen(s1) + k) + 1);
 	if (!new)
 		return (free(s1), NULL);
 	i = -1;
 	j = -1;
 	if (s1)
-	{
 		while (s1[++i])
 			new[i] = s1[i];
-	}
 	else
 		i++;
 	while (++j < k)
 	{
-		// printf("\ntoto8\n");
 		new[i + j] = s2[j];
 	}
 	new[i + j] = '\0';
@@ -69,7 +64,6 @@ int	ft_strrchr(const char *s, int c)
 	srch = (char)c;
 	while (i >= 0)
 	{
-		// printf("\ntoto5\n");
 		if (s[i] == srch)
 			return (i + 1);
 		i--;
@@ -79,8 +73,8 @@ int	ft_strrchr(const char *s, int c)
 
 char	*ft_strndup(const char *str, size_t str_len)
 {
-	size_t i;
-	char *ptr;
+	size_t	i;
+	char	*ptr;
 
 	if (!str)
 		return (NULL);
@@ -90,7 +84,6 @@ char	*ft_strndup(const char *str, size_t str_len)
 	i = 0;
 	while (i < str_len)
 	{
-		// printf("\ntoto4\n");
 		ptr[i] = str[i];
 		i++;
 	}

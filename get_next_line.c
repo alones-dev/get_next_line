@@ -6,7 +6,7 @@
 /*   By: kdaumont <kdaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:46:50 by kdaumont          #+#    #+#             */
-/*   Updated: 2023/11/23 11:11:59 by kdaumont         ###   ########.fr       */
+/*   Updated: 2023/11/23 13:36:14 by kdaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,19 +59,3 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-
-// void	main(void)
-// {
-// 	int fd = open("test.txt", O_RDWR);
-// 	char *str = get_next_line(fd);
-// 	int x = 1;
-// 	printf("%d: %s\n \n", x++, str);
-// 	while (str != NULL)
-// 	{
-// 		free(str);
-// 		str = get_next_line(fd);
-// 		printf("%d: %s\n \n", x++, str);
-// 	}
-// 	free(str);
-// 	close(fd);
-// }
