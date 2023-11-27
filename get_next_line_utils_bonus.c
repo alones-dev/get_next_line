@@ -6,7 +6,7 @@
 /*   By: kdaumont <kdaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:46:45 by kdaumont          #+#    #+#             */
-/*   Updated: 2023/11/23 13:37:41 by kdaumont         ###   ########.fr       */
+/*   Updated: 2023/11/27 09:25:29 by kdaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,24 +69,4 @@ int	ft_strrchr(const char *s, int c)
 		i--;
 	}
 	return (i);
-}
-
-char	*ft_strndup(const char *str, size_t str_len)
-{
-	size_t	i;
-	char	*ptr;
-
-	if (!str)
-		return (NULL);
-	ptr = malloc((str_len + 1) * sizeof(char));
-	if (!ptr)
-		return (NULL);
-	i = 0;
-	while (i < str_len)
-	{
-		ptr[i] = str[i];
-		i++;
-	}
-	ptr[i] = '\0';
-	return (ptr);
 }

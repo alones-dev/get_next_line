@@ -6,7 +6,7 @@
 /*   By: kdaumont <kdaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:46:54 by kdaumont          #+#    #+#             */
-/*   Updated: 2023/11/23 13:36:08 by kdaumont         ###   ########.fr       */
+/*   Updated: 2023/11/27 09:25:03 by kdaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 char	*ft_strjoin(char *s1, char *s2, size_t new_line);
 int		ft_strrchr(const char *s, int c);
 int		ft_strlen(const char *s);
-char	*ft_strndup(const char *str, size_t str_len);
 char	*get_next_line(int fd);
 
 #endif
