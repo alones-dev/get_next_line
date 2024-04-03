@@ -8,7 +8,7 @@ Allowed functions are ```read()```, ```malloc()``` & ```free()```.
 ## Usage
 **1. Clone the repository**
 ```
-git clone https://github.com/alones-dev/ft_printf.git
+git clone https://github.com/alones-dev/get_next_line.git
 ```
 **2. Compile the project**
 ```
