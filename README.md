@@ -16,7 +16,6 @@ make
 ```
 **3. Enjoy**
 ```c
-#include "ft_printf.h"
 #include <fcntl.h>
 #include <stdio.h>
 
