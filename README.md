@@ -1,11 +1,23 @@
-# get_next_line
-```get_next_line()``` is a function that returns a line read from a file descriptor.
+# **📜 get_next_line**
 
-This project is made in C for 42School.
+Welcome to **get_next_line**! 🚀  
+This project challenges you to implement a function that reads one line at a time from a file descriptor. It’s a great exercise for getting familiar with handling file input and memory management in C.
 
-Allowed functions are ```read()```, ```malloc()``` & ```free()```.
+The goal is to implement **get_next_line()** — a function that reads a line from a file descriptor, one at a time, until it reaches the end of the file.
 
-## Usage
+## 🎯 **Project Overview**
+
+In this project, we focus on:
+- Reading data from files in a memory-efficient way.
+- Understanding the importance of buffers and handling memory correctly.
+- Working with low-level file operations in C.
+
+### **Allowed Functions:**
+- `read()`
+- `malloc()`
+- `free()`
+
+## 🛠️ Usage
 **1. Clone the repository**
 ```
 git clone https://github.com/alones-dev/get_next_line.git
